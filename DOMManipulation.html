@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <!-- Buradaki gibi ya fonksiyonla ya da eventle dom yapılabilir. yani ya fonksiyon örn run() ya da event'le id="btn" ile yapılabilir.-->
+    <script>
+        function run() {
+            var p = document.getElementById("parag");
+            console.log(p.innerHTML);
+            p.innerHTML = "Merhaba Dünya!";
+            console.log(p.innerHTML);
+
+            //açıkmavi olanlar değişken, koyumavi olanlar metot
+            // aşağıdaki parag la ifade edilen elementin obje halidir burası
+            // innerHTML ilgili html'nin içi demek
+            // getElementById de elementi id si ile getir demek
+        }
+
+        function loadList() {
+            var fruits = ["orange", "apple", "orange", "kiwi", "mango"]
+            var ul = document.getElementById("list")
+            ul.innerHTML = ""; // her defasında diziyi eklemesin diye metot her çalıştığında ul'in içini sil diyebiliriz bu şekilde.
+
+            for (var i = 0; i < fruits.length; i++) {
+                var item = fruits[i];
+                var li = document.createElement("li"); // element oluştur demek create element
+                li.innerHTML = item;
+                li.innerHTML = "<b>" + item + "<b>"; // bu şekilde tarayıcıda anlamlı olan html taglerini string şeklinde yazabiliriz.
+
+                ul.appendChild(li); // li'ye bir çocuk element ekle anlamına gelir. sonuna ekler. bir de prepend() vardır o da başına ekler
+
+            }
+        }
+
+        function onLoad() {
+            console.log("onload çalıştı");
+            var b = document.getElementById("btn");
+            // b.onclick = run(); // burada yukarıdaki run metodunu bulup çalıştırmış oluyor.
+            //burada event le yapmış oluyoruz.
+            // aşağıda anonim fonksiyonlu çalıştırılsın diye buradaki b.onclick = run(); yoruma alındı
+
+            // eğer fonksiyon olarak yazmadıysak yani run() diye fonksiyonumuz yok diyelim
+            //aşağıdaki gibi bir anonim fonksiyon oluşturabiliriz.
+
+            b.onclick = function () {
+                var p = document.getElementById("parag");
+                console.log(p.innerHTML);
+                p.innerHTML = "Merhaba Dünya!";
+                console.log(p.innerHTML);
+            };
+
+        }
+    </script>
+
+</head>
+
+<body onload="onLoad()">
+    <h1>DOM Manipulation</h1>
+    <hr>
+    <!--Document Object Model(Belge nesne Modeli)
+     DOM'u kullanarak web sayfalarındaki HTML, CSS ve diğer içerikleri dinamik olarak değiştirme veya manipüle etme işlemidir.
+    JavaScript kullanılarak DOM manipülasyonu, sayfadaki HTML öğelerine erişim sağlamak, öğeleri değiştirmek, eklemek veya kaldırmak gibi işlemleri içerir. 
+    Bu, kullanıcı etkileşimine dayalı olarak sayfa içeriğini güncellemek veya dinamik olarak yeni içerik oluşturmak için sıkça kullanılır. -->
+    <p id="parag">Hello World!</p>
+    <!-- <button onclick="run()">Metin değiştir</button>  bu fonksiyonla çalışır--> 
+    <!-- yukarıdaki yerine aşağıdaki gibi eventle de yapabiliriz -->
+    <button id="btn">Metin değiştir</button> 
+    <!-- yukarıdaki ise eventle çalışır -->
+    <hr>
+    <button onclick="loadList()">Listeyi Doldur</button>
+    <ul id="list"></ul>
+
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script src="script.js">
+        //birden çok script dosyası bu şekilde eklenebilir
+    </script>
+    <script>
+        // javaScript kodlarımızı buraya yazabiliriz
+
+        var name = "özlem";
+
+        // metin tutacaksak tek tırnak da oluyor, çift tırnak da 
+        // var data tipi her türlü data tipini alabiliyor ve ilk atanan data tipinin yerine geçiyor.
+        // yukarıdaki örnekte string olmuşken, aşağıdaki örnekte number (int) tipini alıyor.
+
+        var age = 24;
+
+        var salary = 100.5; // bunu da number olarak alıyor ve kusuratlı olduğunu biliyor.
+
+        var locked = true; // true ya da false şeklinde iki değer alabilen bir boolean tipi oluyor.
+
+        var surname; // undefined / bu şekilde tanımsız tanımlayabiliriz, veri tipi bu durumda any olacaktır.
+        surname = "belörenoğlu" // burada değer ataması yaptığımızda her ne kadar veri tipi yukarda hala any yazsa da artık string olacaktır.
+
+        var empty = null; // bu şekilde boş değer de tanımlayabiliriz. burada değişkenin içi boştur yukarıdaki gibi değişken artık tanımsız değildir, değeri boştur.
+
+        var array = ["elma", "armut", "kivi"]; // bir dizi de oluşturabiliyoruz.
+
+        var array2 = [1, 2, 3, 4]; // bu bir int dizisi de olabilir
+
+        var array3 = ["özlem", 2, false, 30.5]; // farklı veri tiplerini de var dizisinde yazabiliriz.
+
+        // eğer yukarıdaki array değişkeninin elemanlarını güncellemek istersek indexleri ile güncelleriz.
+
+        array[0] = "aaa";
+        array[1] = "bbb";
+        array[3] = "ccc";
+        var obj = {
+            fname: "özlem",
+            lname: "belörenoğlu",
+            age: 31,
+            worked: true,
+            addresses: ["Ankara"],
+            workAddress: {
+                street: "x. cad",
+                no: 10,
+                city: "Ankara",
+                country: "Türkiye"
+            }
+
+        }
+        // objenin (nesne) içerisindekiler property lerdir.
+        // propertyler boş tanımlanabilir null tanımlanabilir yani ama undefined tanımlanamaz.
+        // obj veya property lerinin üzerine gelirsek ne olduğunu ve veri tipini göstermektedir.
+        // nesnenin içinde de nesne oluşturulabilir yani property'sinin de bir property leri olabilir
+
+        //objenin içindekileri güncellemek istersek aşağıdaki gibi yazabiliriz.
+        obj.fname = "Mustafa";
+        obj.workAddress.city = "İstanbul";
+
+        /* bu şekilde
+        daha büyük
+        yorumlar yazabiliriz
+        yani satır atlayarak yazabiliriz .
+        */
+    </script>
+</head>
+
+<body>
+    <h1>Script Tag ve External JS</h1>
+    <hr>
+    <p> JavaScript kodlarımızı ayrı bir dosyada da yazabiliriz. External olacak şekilde</p>
+    <hr>
+    <h1>Document.Write, Alert, Console.Log</h1>
+    <hr>
+    <button onclick="document.write('Hello, World!')">click me</button>
+    <script>
+        // javaScript kodlarımızı buraya da yazabiliriz. bir skıntı olmaz.
+        document.write("Hello, World!");
+        // bu komut bulunduğu yere yazdırma komutudur.
+
+        console.log("Merhaba Dünya!");
+        // consola log atmak için kullanılır. konsolda veri tutulur. ekrana bir şey yazdırılmaz.
+
+        alert("Hello, JavaScript!");
+        window.alert("Hello JavaScript2!");
+
+        // yukarıdaki iki alert de aynıdır. aynı işlemi yaparlar yani iki şekilde de yazılabilir.
+        // ikisi de aynı fonksiyonu tetikler. bana ekranda bir alarm göster demektir pop up şeklinde.
+
+    </script>
+    <hr>
+    <h1>Data Types(Variables), Object and Comments</h1>
+    <hr>
+
+</body>
+
+</html>

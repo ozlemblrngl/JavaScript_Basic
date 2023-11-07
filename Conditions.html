@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script>
+        var age = 15;
+
+        function ageUp() {
+            age++;
+
+            console.log(age);
+
+            //1. yöntem
+            // if (age < 18) {
+            //     console.log("yaşınız 18'den küçüktür");
+            // }
+            // else if (age > 18) {
+            //     console.log("yaşınız 18'den büyüktür");
+            // }
+            // else {
+            //     console.log("yaşınız 18'dir")
+            // }
+
+            //2.yöntem
+            // if (age < 18) {
+            //     console.log("yaşınız 18'den küçüktür");
+            // }
+            // else if (age == 18) {
+            //     console.log("yaşınız 18'dir");
+            // }
+            // else {
+            //     console.log("yaşınız 18'den büyüktür")
+            // }
+
+            if (age <= 18) {
+                if (age == 18) {
+                    console.log("yaşınız 18'dir")
+                }
+                else {
+                    console.log("yaşınız 18'den küçüktür")
+                }
+            }
+            else if (age > 18 && age < 24) {
+                console.log("yaşınız 18'den büyük 24'ten küçüktür")
+            }
+            else if (age > 24 || age == 24) {
+                console.log("yaşınız 24 veya 24'ten büyüktür")
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Conditionals (Koşullar) </h1>
+    <hr>
+    <button onclick="ageUp()"> Yaş Arttır</button>
+
+</body>
+
+</html>
